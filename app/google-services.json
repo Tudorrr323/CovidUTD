@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "366345970519",
+    "project_id": "maps-9471c",
+    "storage_bucket": "maps-9471c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366345970519:android:f653451018918db9961412",
+        "android_client_info": {
+          "package_name": "com.codingwithmitch.googlemaps2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366345970519-c5d6m9n1fu8ve6jdkav5b51ibt202ai0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZKSoqGDgKsPP0oxJ9UdlEUtu6BzJVb6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366345970519-c5d6m9n1fu8ve6jdkav5b51ibt202ai0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366345970519:android:6354636900dd49ca961412",
+        "android_client_info": {
+          "package_name": "com.example.covidutd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366345970519-c5d6m9n1fu8ve6jdkav5b51ibt202ai0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZKSoqGDgKsPP0oxJ9UdlEUtu6BzJVb6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366345970519-c5d6m9n1fu8ve6jdkav5b51ibt202ai0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

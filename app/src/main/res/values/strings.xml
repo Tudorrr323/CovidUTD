@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CovidUTD</string>
+    <string name="logout">Logout</string>
+    <string name="google_maps_API_key" translatable="false">AIzaSyAX8R9JCHA0jXv5IdMvHJxMZ2pe8T0epb0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="disconnect">Disconnect</string>
+</resources>
