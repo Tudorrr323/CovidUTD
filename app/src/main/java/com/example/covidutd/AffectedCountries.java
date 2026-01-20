@@ -20,7 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.leo.simplearcloader.SimpleArcLoader;
+import android.widget.ProgressBar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +33,7 @@ public class AffectedCountries extends AppCompatActivity {
 
     EditText editSearch;
     ListView listView;
-    SimpleArcLoader simpleArcLoader;
+    ProgressBar simpleArcLoader;
 
     public static List<CountryModel> countryModelsList = new ArrayList<>();
     CountryModel countryModel;
@@ -87,7 +87,7 @@ public class AffectedCountries extends AppCompatActivity {
 
     private void fetchData() {
         String url  = "https://corona.lmao.ninja/v2/countries/";
-        simpleArcLoader.start();
+        
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -114,19 +114,16 @@ public class AffectedCountries extends AppCompatActivity {
                             }
                             affectedCountriesAdapter = new AffectedCountriesAdapter(AffectedCountries.this, countryModelsList);
                             listView.setAdapter(affectedCountriesAdapter);
-                            simpleArcLoader.stop();
                             simpleArcLoader.setVisibility(View.GONE);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            simpleArcLoader.stop();
                             simpleArcLoader.setVisibility(View.GONE);
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                simpleArcLoader.stop();
                 simpleArcLoader.setVisibility(View.GONE);
                 Toast.makeText(AffectedCountries.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }

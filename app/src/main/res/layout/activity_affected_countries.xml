@@ -32,11 +32,10 @@
         android:layout_below="@+id/editSearch"
         android:layout_margin="10dp"/>
 
-    <com.leo.simplearcloader.SimpleArcLoader
+    <ProgressBar
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/loader"
-        app:arc_style="simple_arc"
         android:visibility="visible"
         android:layout_centerInParent="true"/>
 

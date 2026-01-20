@@ -14,7 +14,6 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.jaeger.library.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        StatusBarUtil.setTransparent(this);
         Intent intent = new Intent(MainActivity.this, MapActivity.class);
         startActivity(intent);
     }

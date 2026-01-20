@@ -17,7 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.leo.simplearcloader.SimpleArcLoader;
+import android.widget.ProgressBar;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -27,7 +27,7 @@ import org.json.JSONObject;
 public class Covid19 extends AppCompatActivity {
     
     TextView tvCases, tvRecovered, tvCritical, tvActive, tvTodayCases, tvTotalDeaths, tvTodayDeaths, tvAffectedCountries;
-    SimpleArcLoader simpleArcLoader;
+    ProgressBar simpleArcLoader;
     ScrollView scrollView;
     PieChart pieChart;
 
@@ -45,7 +45,7 @@ public class Covid19 extends AppCompatActivity {
         tvTodayDeaths = (TextView) findViewById(R.id.tvTodayDeaths);
         tvAffectedCountries = (TextView) findViewById(R.id.tvAffectedCountries);
 
-        simpleArcLoader = (SimpleArcLoader) findViewById(R.id.loader);
+        simpleArcLoader = (ProgressBar) findViewById(R.id.loader);
         scrollView = (ScrollView) findViewById(R.id.scrollStats);
         pieChart = (PieChart) findViewById(R.id.piechart);
         
@@ -55,7 +55,7 @@ public class Covid19 extends AppCompatActivity {
     private void fetchData() {
 
         String url = "https://corona.lmao.ninja/v2/all/";
-        simpleArcLoader.start();
+        
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -78,13 +78,11 @@ public class Covid19 extends AppCompatActivity {
                             pieChart.addPieSlice(new PieModel("Active", Integer.parseInt(tvActive.getText().toString()), Color.parseColor("#29B6F6")));
                             pieChart.startAnimation();
 
-                            simpleArcLoader.stop();
                             simpleArcLoader.setVisibility(View.GONE);
                             scrollView.setVisibility(View.VISIBLE);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            simpleArcLoader.stop();
                             simpleArcLoader.setVisibility(View.GONE);
                             scrollView.setVisibility(View.VISIBLE);
                         }

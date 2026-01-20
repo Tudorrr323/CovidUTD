@@ -1,27 +1,65 @@
 # CovidUTD - Android Application
 
-Proiect dezvoltat în cadrul hackathonului **Entrepreneur 2021 H1**, organizat de **Universitatea Politehnica din București (UPB)**, care s-a desfășurat online în anul 2021.
+Acest proiect a fost dezvoltat inițial în cadrul hackathonului **Entrepreneur 2021 H1**, organizat de **Universitatea Politehnica din București (UPB)** în anul 2021.
 
-## ⚠️ Status Proiect
-**Notă:** Momentan aplicația nu mai este funcțională deoarece nu a mai fost actualizată pentru a fi compatibilă cu noile versiuni ale API-urilor și serviciilor externe utilizate.
+**📅 Actualizare:** Proiectul a fost optimizat și actualizat la data de **20.01.2026** pentru a fi compatibil cu cele mai noi versiuni de Android și librării, fiind complet funcțional.
 
-## 📺 Prezentare Video
-Puteți vizualiza o demonstrație a aplicației din perioada în care era complet funcțională accesând link-ul de mai jos:
-[Video Reprezentativ CovidUTD](https://drive.google.com/file/d/1P3UwzO1J1Sdgbs_lKbcAu5qRUwe6r7JU/view?usp=sharing)
+## 📱 Descriere și Funcționalități
 
-## 🛠 Tehnologii și Limbaje Utilizate
-Aplicația a fost dezvoltată nativ pentru platforma Android folosind:
+Tema concursului a fost **Covid19**, iar ideea centrală a aplicației este o soluție integrată care combină funcționalități de monitorizare a pandemiei cu utilitare bazate pe locație.
 
-*   **Limbaj de programare:** Java
-*   **Backend & Baze de date:** Firebase (Authentication, Firestore, Realtime Database, Storage)
-*   **Networking:** Volley (pentru preluarea datelor statistice despre COVID-19)
-*   **Hărți și Locație:** Google Maps SDK & Google Places API
-*   **UI/UX & Vizualizare date:**
-    *   Material Design Components
-    *   EazeGraph (pentru grafice și statistici)
-    *   Glide (pentru încărcarea eficientă a imaginilor)
-    *   SimpleArcLoader (pentru animații de încărcare)
-*   **Permisiuni:** Dexter (gestionarea simplificată a permisiunilor de Android)
+### Funcționalități Principale:
 
-## 📌 Descriere
-CovidUTD a fost concepută ca o soluție integrată pentru monitorizarea situației pandemice, oferind statistici în timp real, autentificare utilizatori și funcționalități bazate pe locație, totul sub o interfață modernă și intuitivă.
+*   **🗺️ Hartă Interactivă:**
+    *   Utilizatorii au acces la o hartă Google Maps unde pot căuta orice locație sau oraș.
+    *   **Searchbar inteligent:** Oferă hint-uri (sugestii) automate pe măsură ce utilizatorul tastează.
+    *   **Pin Drop:** La selectarea unui rezultat, se adaugă automat un pin pe hartă la locația respectivă.
+    *   **Localizare:** Există un buton dedicat care centrează harta pe locația curentă a telefonului (GPS).
+
+*   **📊 Statistici Covid19 (Global & Local):**
+    *   Există un buton special în aplicație care deschide un dashboard cu date despre pandemie.
+    *   **Diagramă Vizuală:** Un grafic (Pie Chart) care ilustrează proporțiile dintre:
+        *   Cazuri Totale
+        *   Recuperări
+        *   Decese
+        *   Cazuri Active
+    *   **Listă Detaliată:** Se pot vizualiza statistici precise precum cazuri critice, cazurile de azi, totalul morților, morții de azi și numărul de țări afectate.
+    *   **Sursa datelor:** Toate datele se actualizează zilnic, fiind preluate în timp real folosind API-ul open-source găzduit pe GitHub: [https://github.com/disease-sh/API](https://github.com/disease-sh/API) (folosit în aplicație prin endpoint-ul `corona.lmao.ninja`).
+
+*   **🌍 Track Countries:**
+    *   Pe pagina de statistici există funcția "Track Countries".
+    *   Utilizatorul poate căuta o anumită țară folosind bara de căutare dedicată.
+    *   Aplicația va afișa exact aceleași statistici detaliate și diagrama, dar filtrate specific pentru țara selectată.
+
+*   **👤 Profil și Setări:**
+    *   **Profil:** Utilizatorii își pot vizualiza datele contului.
+    *   **Log-out:** Funcționalitate completă de deconectare securizată.
+
+## 🛠️ Configurare și Instalare
+
+Aplicația a fost realizată în **Android Studio**. Pentru a rula proiectul, aveți nevoie de configurarea cheilor API pentru serviciile Google.
+
+### Pasul 1: Google Firebase (Baza de date & Autentificare)
+1.  Creați un proiect nou în [Firebase Console](https://console.firebase.google.com/).
+2.  Activați **Authentication** și **Firestore Database**.
+3.  Descărcați fișierul de configurare `google-services.json` din consola Firebase.
+4.  Mutați acest fișier în directorul:
+    `CovidUTD/app/google-services.json`
+
+### Pasul 2: Google Maps SDK (Hărți)
+1.  Activați **Maps SDK for Android** și **Places API** din [Google Cloud Console](https://console.cloud.google.com/).
+2.  Generați o cheie API (API Key).
+3.  Deschideți fișierul `AndroidManifest.xml` din proiect (`app/src/main/AndroidManifest.xml`).
+4.  Căutați linia de mai jos și înlocuiți valoarea cu cheia dumneavoastră:
+    ```xml
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="INTRODUCETI_AICI_CHEIA_API_NOUA" />
+    ```
+
+## 💻 Tehnologii Utilizate
+*   **Java** (Android Native)
+*   **Firebase** (Auth, Firestore)
+*   **Volley** (API Requests)
+*   **Google Maps & Places API**
+*   **EazeGraph** (Grafice și Diagrame)
